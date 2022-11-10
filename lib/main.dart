@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_flutter/homepage.dart';
+import 'package:movie_app_flutter/splashscreen.dart';
 import 'package:movie_app_flutter/utils/text.dart';
 import 'package:movie_app_flutter/widgets/toprated.dart';
 import 'package:movie_app_flutter/widgets/trending.dart';
@@ -12,7 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: HomePage(),
+      // home: LoginPage(),
+      home: Splash(),
+      // home: Home(),
       theme: ThemeData(brightness: Brightness.dark, primaryColor: Colors.green),
     );
   }
@@ -49,6 +54,7 @@ class _HomeState extends State<Home> {
     Map trendingresult = await tmdbWithCustomLogs.v3.trending.getTrending();
     Map topratedresult = await tmdbWithCustomLogs.v3.movies.getTopRated();
     Map tvresult = await tmdbWithCustomLogs.v3.tv.getPouplar();
+    // Map tvresult = await tmdbWithCustomLogs.v3.tv.getPopular();
     print((trendingresult));
     setState(() {
       trendingmovies = trendingresult['results'];
