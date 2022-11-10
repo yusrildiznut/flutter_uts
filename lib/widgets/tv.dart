@@ -22,7 +22,7 @@ class TV extends StatelessWidget {
           SizedBox(height: 10),
           Container(
               // color: Colors.red,
-              height: 200,
+              height: 250,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: tv.length,
